@@ -592,10 +592,35 @@ window.addEventListener('load', function () {
     const mainContent = document.getElementById('main-content');
     
     // Fade out loading screen
-    loadingScreen.style.transition = 'opacity 4s ease';
+    loadingScreen.style.transition = 'opacity 6s ease';
     loadingScreen.style.opacity = '0';
     setTimeout(() => {
       loadingScreen.style.display = 'none';
       mainContent.style.display = 'block';
-    }, 4000);
+    }, 6000);
+  });
+
+  document.body.addEventListener('click', (e) => {
+    // Prevent hearts when clicking interactive elements
+    if (e.target.closest('button, a, input, textarea, select, label')) return;
+
+    const count = 8; // Number of hearts
+    for (let i = 0; i < count; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'heart-particle';
+      heart.textContent = '♥';
+
+      const offsetX = (Math.random() - 0.5) * 40;  // ±20px
+      const offsetY = (Math.random() - 0.5) * 40;
+
+      heart.style.position = 'fixed';
+      heart.style.left = `${e.clientX + offsetX}px`;
+      heart.style.top = `${e.clientY + offsetY}px`;
+      heart.style.pointerEvents = 'none';
+      heart.style.zIndex = 9999;
+
+      document.body.appendChild(heart);
+
+      heart.addEventListener('animationend', () => heart.remove());
+    }
   });
