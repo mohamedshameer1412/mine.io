@@ -5,7 +5,7 @@ const canvasC = document.getElementById('c');
 const surprise = document.getElementById('surprise');
 
 const config = {
-  birthdate: 'May 5, 2025',
+  birthdate: 'May 4, 2025',
   name: 'P.Deepa'
 };
 
