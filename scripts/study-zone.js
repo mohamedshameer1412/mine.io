@@ -596,31 +596,30 @@ window.addEventListener('load', function () {
     loadingScreen.style.opacity = '0';
     setTimeout(() => {
       loadingScreen.style.display = 'none';
+      loadingScreen.style.zIndex = '-1'; // Reset opacity for next load
       mainContent.style.display = 'block';
     }, 6000);
   });
 
   document.body.addEventListener('click', (e) => {
-    // Prevent hearts when clicking interactive elements
-    if (e.target.closest('button, a, input, textarea, select, label')) return;
+    // don’t spawn hearts when clicking buttons/links/inputs
+    if (e.target.closest('button, a, input')) return;
 
-    const count = 8; // Number of hearts
+    const count = 8;  // how many hearts per click
     for (let i = 0; i < count; i++) {
-      const heart = document.createElement('span');
-      heart.className = 'heart-particle';
-      heart.textContent = '♥';
+        const heart = document.createElement('span');
+        heart.className = 'heart-particle';
+        heart.textContent = '♥';
 
-      const offsetX = (Math.random() - 0.5) * 40;  // ±20px
-      const offsetY = (Math.random() - 0.5) * 40;
+        // randomise start position around the click
+        const offsetX = (Math.random() - 0.5) * 40;  // ±20px
+        const offsetY = (Math.random() - 0.5) * 40;  // ±20px
+        heart.style.left = `${e.pageX + offsetX}px`;
+        heart.style.top = `${e.pageY + offsetY}px`;
 
-      heart.style.position = 'fixed';
-      heart.style.left = `${e.clientX + offsetX}px`;
-      heart.style.top = `${e.clientY + offsetY}px`;
-      heart.style.pointerEvents = 'none';
-      heart.style.zIndex = 9999;
+        document.body.appendChild(heart);
 
-      document.body.appendChild(heart);
-
-      heart.addEventListener('animationend', () => heart.remove());
+        heart.addEventListener('animationend', () => heart.remove());
     }
-  });
+});
+
