@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
         confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
     }, 4500);
 
-    const birthday = new Date('2025-05-04T00:00:00').getTime();
+    const birthday = new Date('2025-05-05T00:00:00').getTime();
     const countdownEl = document.getElementById('countdown');
     const countdownScreen = document.getElementById('countdown-screen');
     const siteContent = document.getElementById('site-content');
