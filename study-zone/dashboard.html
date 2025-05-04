@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPSC Dashboard for Her 🎓❤️</title>
+    <link rel="shortcut icon" href="../images/upsc.png" type="image/x-icon">
+    <!-- Bootstrap 5 CDN -->
+    <link rel="stylesheet" href="../bootstrap-5.3.5/css/bootstrap.min.css" >
+
+    <!-- AOS Animation CSS -->
+    <link href="../styles/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/study-zone.css">
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading, please wait...</p>
+    </div>
+
+
+    <div id="main-content" style="display: none;">
+
+        <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+            <a class="navbar-brand" href="#">🌟 UPSC For Deepa Sri</a> <span id="streak-badge1"
+                class="badge bg-warning text-dark fs-6 shadow-sm d-none d-md-block">🔥 Streak: 0 Days</span>
+
+            <button class="btn btn-outline-dark  ms-auto me-3" id="toggle-mode">🌗 Toggle Mode</button>
+        </nav>
+
+        <div class="container py-4">
+            <nav aria-label="breadcrumb" class="my-3">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html">🎂 Birthday Page</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                </ol>
+            </nav>
+            <br>
+
+            <input type="text" id="search-bar" class="form-control my-3" placeholder="🔍 Search for a resource...">
+
+            <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#greeting">🎉
+                        Home</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#resources">📚
+                        Resources</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#websites">🌐
+                        Websites</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#strategies">🧠
+                        Strategies</button></li>
+                <li class="nav-item">
+                    <a class="nav-link" id="articles-tab" data-bs-toggle="tab" href="#articles" role="tab"
+                        aria-controls="articles" aria-selected="true">📰 Articles</a>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bookmarks">📌 Bookmarks</button>
+                </li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#planner">🗓️ Study
+                        Plan</button></li>
+
+            </ul>
+
+            <div class="tab-content">
+                <!-- Birthday Greeting -->
+                <!-- <div class="tab-pane fade show active" id="greeting">
+                <h2 class="mt-3" data-aos="fade-up">Happy Birthday My IAS Officer ❤️</h2>
+                <p class="quote-box" id="daily-quote">Loading your quote...</p>
+
+            </div> -->
+
+                <div class="tab-pane fade show active" id="greeting">
+
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h1>🌟 Welcome, Future IAS ❤️</h1>
+                        <!-- Moved this span below to avoid duplicate ID -->
+                        <span id="streak-badge" class="badge d-block d-md-none bg-warning text-dark fs-6 shadow-sm">🔥
+                            Streak: 0 Days</span>
+                    </div>
+
+                    <p class="quote-box bg-light border rounded shadow-sm text-dark" id="quote">Loading your quote...
+                    </p>
+
+                    <!-- 🔥 Single streak display section -->
+                    <div class="d-flex justify-content-center mb-3">
+                        <img id="streak-gif" class="img-fluid d-block"
+                            style="display: none; max-width: 100%; height: auto;" />
+                    </div>
+
+
+                    <div class="bg-light border rounded shadow-sm px-3 py-2">
+                        <p class="text-muted">🌱 Today’s Motivation:</p>
+                        <p class="quote-box text-dark" id="daily-quote">Loading
+                            your quote...
+                        </p>
+                    </div>
+
+                    <div class="my-3">
+                        <a href="../index.html" class="btn btn-outline-primary">
+                            ← Back to Birthday Page
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- Study Resources -->
+                <div class="tab-pane fade" id="resources">
+                    <h3 class="mt-3">Core UPSC Materials</h3>
+                    <ul id="resources-list" class="list-group"></ul>
+                </div>
+
+                <!-- Websites -->
+                <div class="tab-pane fade" id="websites">
+                    <h3 class="mt-3">Useful Websites</h3>
+                    <div id="websites-container"></div>
+                </div>
+
+                <!-- Topper Strategies -->
+                <div class="tab-pane fade" id="strategies">
+                    <h3 class="mt-3">Topper Insights & Tips</h3>
+                    <ul id="strategies-list" class="list-group"></ul>
+                </div>
+
+                <div class="tab-content" id="news-tabContent">
+                    <div class="tab-pane fade" id="articles" role="tabpanel" aria-labelledby="articles-tab">
+                        <div id="news-container" class="list-group mt-3">
+                            <!-- Articles will be injected here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="bookmarks">
+                    <div class="p-3">
+                        <h5 class="mb-3">Save a Bookmark</h5>
+                        <form id="bookmark-form" class="mb-3">
+                            <div class="mb-2">
+                                <input type="text" id="bookmark-label" class="form-control" placeholder="Enter title"
+                                    required>
+                            </div>
+                            <div class="mb-2">
+                                <input type="url" id="bookmark-url" class="form-control"
+                                    placeholder="Enter URL (e.g., https://...)" required>
+                            </div>
+                            <div class="mb-2">
+                                <input type="text" id="bookmark-tag" class="form-control"
+                                    placeholder="Enter tag (e.g., Study, Fun)">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Save Bookmark</button>
+                        </form>
+                        <hr>
+                        <h6 class="tex">Saved Bookmarks</h6>
+                        <ul id="bookmark-list" class="list-group"></ul>
+                    </div>
+                </div>
+
+
+                <!-- Study Planner -->
+                <div class="tab-pane fade" id="planner">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h2>📘 UPSC Daily Study Checklist</h2>
+                        <span id="streak-badge2" class="badge d-block d-md-none bg-warning text-dark fs-6 shadow-sm">🔥
+                            Streak: 0 Days</span>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div id="progress-bar" class="progress-bar progress-bar-striped bg-warning" role="progressbar"
+                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            0%
+                        </div>
+                    </div>
+
+                    <!-- Checklist -->
+                    <ul class="list-group mb-3" id="task-list"></ul>
+
+                    <!-- Celebration -->
+                    <div id="celebration-section" class="text-center my-5" style="display: none;">
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <button class="btn btn-warning mb-2" onclick="revealSecret();">
+                                📩 Reveal Secret Message
+                            </button>
+                            <button class="btn btn-danger mb-2" onclick="resetTasks();">
+                                ♻️ Reset Tasks
+                            </button>
+                        </div>
+
+                        <div id="secret-msg" class="hidden-message text-center mx-auto mb-5"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bootstrap + AOS + Confetti Scripts -->
+        <script src="../bootstrap-5.3.5/js/bootstrap.bundle.min.js"></script>
+        <script src="../scripts/aos.js"></script>
+        <script src="../scripts/confetti-canvas.js  "></script>
+
+        <script src="../scripts/study-zone.js"></script>
+
+
+    </div>
+
+
+</body>
+
+</html>

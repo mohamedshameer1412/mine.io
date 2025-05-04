@@ -1,0 +1,103 @@
+{
+    "Official & Govt Sources": [
+      {
+        "name": "UPSC Official Site",
+        "link": "https://www.upsc.gov.in",
+        "description": "Exam notifications, syllabus, and previous papers."
+      },
+      {
+        "name": "PIB - Press Information Bureau",
+        "link": "https://www.pib.gov.in",
+        "description": "Authentic government press releases and news."
+      },
+      {
+        "name": "PRS Legislative Research",
+        "link": "https://prsindia.org/",
+        "description": "In-depth policy analysis and summaries of bills."
+      },
+      {
+        "name": "India Code",
+        "link": "https://www.indiacode.nic.in/",
+        "description": "All central government acts and rules in one place."
+      },
+      {
+        "name": "Sansad TV (formerly RSTV)",
+        "link": "https://sansadtv.nic.in/",
+        "description": "Parliamentary debates and insightful interviews."
+      }
+    ],
+    "Current Affairs & Editorials": [
+      {
+        "name": "The Hindu",
+        "link": "https://www.thehindu.com/",
+        "description": "Top newspaper for UPSC editorial analysis."
+      },
+      {
+        "name": "Indian Express",
+        "link": "https://indianexpress.com/",
+        "description": "Current affairs and opinions with a UPSC lens."
+      },
+      {
+        "name": "Down to Earth",
+        "link": "https://www.downtoearth.org.in/",
+        "description": "Environmental issues and policies with examples."
+      }
+    ],
+    "UPSC Coaching Platforms": [
+      {
+        "name": "Vision IAS",
+        "link": "https://visionias.in/",
+        "description": "Test series, PDFs, current affairs compilations."
+      },
+      {
+        "name": "Insights on India",
+        "link": "https://www.insightsonindia.com/",
+        "description": "Daily answer writing, editorials, and quizzes."
+      },
+      {
+        "name": "ForumIAS",
+        "link": "https://forumias.com/",
+        "description": "Community-driven platform with test series."
+      },
+      {
+        "name": "Drishti IAS",
+        "link": "https://www.drishtiias.com/",
+        "description": "Hindi + English resources, video lectures."
+      },
+      {
+        "name": "Mrunal.org",
+        "link": "https://mrunal.org/",
+        "description": "Economy & geography expert, free lectures."
+      }
+    ],
+    "Mock Tests & Quizzes": [
+      {
+        "name": "ClearIAS",
+        "link": "https://www.clearias.com/",
+        "description": "CSAT, GS quizzes, and study plans."
+      },
+      {
+        "name": "Tathastu-ICS",
+        "link": "https://www.youtube.com/@Tathastuics/playlists",
+        "description": "youtube course for preparing upsc."
+      },
+      {
+        "name": "Unacademy Free Classes",
+        "link": "https://unacademy.com/",
+        "description": "Live classes and notes by educators."
+      }
+    ],
+    "Discussion Forums": [
+      {
+        "name": "Reddit UPSC",
+        "link": "https://www.reddit.com/r/UPSC/",
+        "description": "Community discussions and real experiences."
+      },
+      {
+        "name": "Telegram Channels",
+        "link": "https://t.me/upscmaterials2024",
+        "description": "Free PDFs, daily MCQs, and topper notes."
+      }
+    ]
+  }
+  

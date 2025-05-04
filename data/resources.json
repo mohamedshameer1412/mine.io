@@ -1,0 +1,74 @@
+{
+    "NCERTs": [
+        {
+            "title": "NCERT History (Class 6-12)",
+            "link": "https://www.drishtiias.com/free-downloads/ncert-history-downloads"
+        },
+        {
+            "title": "NCERT Geography (Class 6-12)",
+            "link": "https://www.drishtiias.com/free-downloads/ncert-geography-downloads"
+        },
+        {
+            "title": "NCERT Polity ",
+            "link": "https://www.drishtiias.com/free-downloads/ncert-book-polity--download"
+        },
+        {
+            "title": "NCERT Economy",
+            "link": "https://www.drishtiias.com/free-downloads/ncert-books-economics-download"
+        }
+    ],
+    "Current Affairs": [
+        {
+            "title": "Vision IAS Monthly Current Affairs",
+            "link": "https://www.visionias.in/resources/current-affairs/"
+        },
+        {
+            "title": "Insights on India Daily Current Affairs",
+            "link": "https://www.insightsonindia.com/current-affairs-upsc/"
+        },
+        {
+            "title": "PIB Summaries",
+            "link": "https://pib.gov.in/PMContents/PMContents.aspx?menuid=8&RegionId=1&reg=3&lang=1"
+        }
+    ],
+    "Answer Writing & Mains Practice": [
+        {
+            "title": "UPSC Mains Previous Year Papers",
+            "link": "https://upsc.gov.in/examinations/previous-question-papers"
+        },
+        {
+            "title": "ForumIAS Answer Writing Practice",
+            "link": "https://forumias.com/blog/mainsmarathon/"
+        }
+    ],
+    "Optional Subjects": [
+        {
+            "title": "Sociology Notes - IGNOU",
+            "link": "https://www.iasgurukul.com/blog/ignou-notes-for-sociology-optional"
+        },
+        {
+            "title": "PSIR Resources",
+            "link": "https://cdn.visionias.in/value_added_material/bebf4-psir-strategy-document.pdf"
+        }
+    ],
+    "Toppers' Strategy": [
+        {
+            "title": "Anudeep Durishetty (AIR 1) Strategy",
+            "link": "https://anudeepdurishetty.in"
+        },
+        {
+            "title": "Toppers Notes & PDFs (Telegram)",
+            "link": "https://t.me/free_upscmaterials"
+        }
+    ],
+    "Miscellaneous": [
+        {
+            "title": "UPSC Syllabus PDF",
+            "link": "https://upsc.gov.in/sites/default/files/RevisedSyllab-Geol-2020_0.pdf"
+        },
+        {
+            "title": "Prelims CSAT Practice",
+            "link": "https://www.clearias.com/upsc-csat/"
+        }
+    ]
+}

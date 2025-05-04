@@ -5,14 +5,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
   <title>Happy Birthday!</title>
-
+  <link rel="shortcut icon" href="images/birthday.png" type="image/x-icon">
   <link rel="stylesheet" href="styles/flexbox-center-container.css" media="all">
   <link rel="stylesheet" href="styles/system-fonts.css" media="all">
   <link rel="stylesheet" href="styles/style.css" media="all">
 </head>
 
 <body>
-  <canvas id=c></canvas>
+  <audio id="bg-audio" loop autoplay preload="auto">
+    <source src="hbd.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+  <canvas id="c"></canvas>
   <canvas id="confetti"></canvas>
   <div class="container" id="count">
     <h1 id="head">Countdown to your birthday:</h1>
@@ -24,15 +29,34 @@
     </ul>
   </div>
   <div id="merrywrap" class="merrywrap">
-    <canvas id="snowfall"></canvas>
+
+    <canvas id="snowfall"> </canvas>
     <div class="giftbox">
       <div class="cover">
-        <div></div>
+        <div> </div>
       </div>
       <div class="box"></div>
     </div>
+
+  </div>
+  <div class="bottom-center" id="surprise">
+    <a href="study-zone/dashboard.html" class="surpise">Click me for a surprise</a>
+  </div>
+
 </body>
 <script src="scripts/confetti.min.js" charset="utf-8"></script>
 <script src="scripts/index.js" charset="utf-8"></script>
-
+<script>
+  // Safari and some mobile browsers require a user gesture before autoplaying audio.
+  // This bit will resume playback if it's been suspended by the browser.
+  document.addEventListener('click', function once() {
+    const audio = document.getElementById('bg-audio');
+    if (audio.paused) {
+      audio.play().catch(() => {
+        /* still may fail if user hasn't interacted, but click should cover it */
+      });
+    }
+    document.removeEventListener('click', once);
+  });
+</script>
 </html>

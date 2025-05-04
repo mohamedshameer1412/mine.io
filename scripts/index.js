@@ -2,10 +2,11 @@ const count = document.getElementById('count');
 const head = document.getElementById('head');
 const giftbox = document.getElementById('merrywrap');
 const canvasC = document.getElementById('c');
+const surprise = document.getElementById('surprise');
 
 const config = {
   birthdate: 'May 5, 2025',
-  name: 'Deepa'
+  name: 'P.Deepa'
 };
 
 function hideEverything() {
@@ -31,16 +32,16 @@ x = setInterval(function() {
   let now = new Date().getTime(),
     distance = countDown - now;
 
-  document.getElementById('day').innerText = Math.floor(distance / day);
-  document.getElementById('hour').innerText = Math.floor(
-    (distance % day) / hour
-  );
-  document.getElementById('minute').innerText = Math.floor(
-    (distance % hour) / minute
-  );
-  document.getElementById('second').innerText = Math.floor(
-    (distance % minute) / second
-  );
+    document.getElementById('day').innerText = Math.floor(distance / day);
+    document.getElementById('hour').innerText = Math.floor(
+      (distance % day) / hour
+    );
+    document.getElementById('minute').innerText = Math.floor(
+      (distance % hour) / minute
+    );
+    document.getElementById('second').innerText = Math.floor(
+      (distance % minute) / second
+    );
 
   let w = (c.width = window.innerWidth),
     h = (c.height = window.innerHeight),
@@ -48,9 +49,9 @@ x = setInterval(function() {
     hw = w / 2, // half-width
     hh = h / 2,
     opts = {
-      strings: ['HAPPY', 'BIRTHDAY!', config.name],
+      strings: ['HAPPY', 'BIRTHDAY!', config.name, 'Sri,IAS'],
       charSize: 30,
-      charSpacing: 35,
+      charSpacing: 32,
       lineHeight: 40,
 
       cx: w / 2,
@@ -117,6 +118,7 @@ x = setInterval(function() {
     this.alphaColor = 'hsla(hue,80%,50%,alp)'.replace('hue', hue);
 
     this.reset();
+    
   }
   Letter.prototype.reset = function() {
     this.phase = 'firework';
@@ -364,6 +366,7 @@ x = setInterval(function() {
     this.size =
       opts.fireworkShardBaseSize + opts.fireworkShardAddedSize * Math.random();
   }
+
   Shard.prototype.step = function() {
     this.x += this.vx;
     this.y += this.vy += opts.gravity;
@@ -401,6 +404,7 @@ x = setInterval(function() {
       y - size
     );
     ctx.bezierCurveTo(x + size / 4, y - size, x + size / 2, y - size / 2, x, y);
+    
   }
 
   function anim() {
@@ -420,6 +424,7 @@ x = setInterval(function() {
     ctx.translate(-hw, -hh);
 
     if (done) for (let l = 0; l < letters.length; ++l) letters[l].reset();
+
   }
 
   for (let i = 0; i < opts.strings.length; ++i) {
@@ -451,24 +456,30 @@ x = setInterval(function() {
   if (distance > 0) {
     head.style.display = 'initial';
     count.style.display = 'initial';
+
   } else {
     head.style.display = 'none';
     count.style.display = 'none';
     giftbox.style.display = 'initial';
+    
     clearInterval(x);
     let merrywrap = document.getElementById('merrywrap');
     let box = merrywrap.getElementsByClassName('giftbox')[0];
     let step = 1;
     let stepMinutes = [2000, 2000, 1000, 1000];
+    
 
     function init() {
       box.addEventListener('click', openBox, false);
       box.addEventListener('click', showfireworks, false);
+      
+      
     }
 
     function stepClass(step) {
       merrywrap.className = 'merrywrap';
       merrywrap.className = 'merrywrap step-' + step;
+      
     }
 
     function openBox() {
@@ -483,6 +494,10 @@ x = setInterval(function() {
       }
       setTimeout(openBox, stepMinutes[step - 1]);
       step++;
+      setTimeout(() => {
+        surprise.style.opacity = '1';     // Smooth fade in
+        surprise.style.zIndex = '1';    // Apply stacking
+      }, 10); // 10 milliseconds is usually enough      
       //   setTimeout(anim, 1900);
     }
 
@@ -490,8 +505,9 @@ x = setInterval(function() {
       canvasC.style.display = 'initial';
       setTimeout(anim, 1500);
     }
-
+    
     init();
+    
   }
 
   // if (distance < 0) {
