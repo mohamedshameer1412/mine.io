@@ -1,0 +1,381 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fff0f5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* Elegant, cursive headings */
+h1,
+h4,
+h5,
+.flip-card-front h6,
+.shiny-card h6 {
+    font-family: 'Great Vibes', cursive;
+}
+
+
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid pink;
+    white-space: nowrap;
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: pink;
+    }
+}
+
+.poem-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.2);
+}
+
+
+/* Heart Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff0f5;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    background: pink;
+    transform: rotate(-45deg) scale(1);
+    transform-origin: center center;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    background: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-45deg) scale(1.2);
+    }
+}
+
+
+
+.heart-particle {
+    position: absolute;
+    color: #ff3366;
+    font-size: 16px;
+
+    pointer-events: none;
+    animation: heart-float 1s ease-out forwards;
+}
+
+@keyframes heart-float {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-80px) scale(1.3);
+    }
+}
+
+h1 {
+    color: #FF007F;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+#heart {
+    transform: scale(1.2);
+    /* Adjust this value as needed */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+
+/* Animated Heart */
+#heart path {
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: drawHeart 3s ease-out forwards;
+}
+
+@keyframes drawHeart {
+    from {
+        stroke-dashoffset: 120;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.parallax {
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+
+
+/* First Parallax Section */
+.parallax1 {
+    background-image: url('../images/bg3.jpg');
+
+}
+
+/* Second Parallax Section */
+.parallax2 {
+    background-image: url('../images/bg.jpg');
+}
+
+/* Second Parallax Section */
+.parallax3 {
+    background-image: url('../images/bg2.jpg');
+}
+
+/* Content Styling */
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    color: #FF007F;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Common Card Style */
+.flip-card,
+.shiny-card {
+    width: 300px !important;
+    max-width: 300px !important;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+    text-align: center;
+}
+
+/* Flip Card */
+/* Responsive flip-card */
+.flip-card {
+    width: 100%;
+    max-width: 300px !important;
+    aspect-ratio: 3 / 2;
+    /* 3:2 ratio instead of fixed height */
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 0;
+    /* parent flex handles centering */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    /* shorthand for top/right/bottom/left = 0 */
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
+    text-align: center;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background: #ffe0ec;
+}
+
+
+/* Shiny Card */
+.shiny-card {
+    padding: 4.5rem !important;
+    background: linear-gradient(135deg, #fff0f5, #ffe6f0);
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.shiny-card:hover {
+    transform: scale(1.05);
+}
+
+.shiny-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300px !important;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(25deg);
+    animation: shine 2s infinite;
+    z-index: 0;
+}
+
+.shiny-card * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes shine {
+    to {
+        top: 100%;
+        left: 100%;
+    }
+}
+
+/* Revealed message */
+#revealed-message {
+    background: #fff;
+
+    padding: 4.5rem !important;
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-pink {
+    background-color: #ff4d6d;
+    color: #fff;
+}
+
+.btn-pink:hover {
+    background-color: #e8435a;
+}
+
+#countdown-screen {
+    display: flex;
+    justify-content: center;
+    /* Horizontally centers the content */
+    align-items: center;
+    /* Vertically centers the content */
+    height: 100vh;
+    /* Make the container take full height of the screen */
+    text-align: center;
+    /* Ensures the text inside is centered */
+}
+
+#countdown {
+    font-size: 4rem;
+    /* Adjust font size for better readability */
+    font-weight: bold;
+    /* Make the countdown text bold */
+    color: #333;
+    /* Change the text color if needed */
+}
+
+#bg-audio { display: none; }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For You, My Love 💖</title>
+      <!-- Bootstrap 5 CDN -->
+      <link rel="stylesheet" href="./bootstrap-5.3.5/css/bootstrap.min.css">
+      <link rel="shortcut icon" href="images/heart.png" type="image/x-icon">
+
+      <!-- AOS Animation CSS -->
+      <link href="./styles/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/poem.css" />
+</head>
+
+<body>
+    <canvas id="confetti-canvas" style="position: fixed;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 999;">
+    </canvas>
+
+    <audio id="bg-audio" loop autoplay preload="auto">
+        <source src="Hawayein.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="heart"></div>
+    </div>
+
+    <div id="countdown-screen" class="p-3">
+        <h5 id="countdown" class="mb-5 text-muted"></h5>
+    </div>
+
+    <div id="site-content" style="display: none;">
+
+        <!-- Confetti -->
+
+        <div class="container py-5 text-center" id="main-content" style="display: none;">
+            <!-- Typewriter Welcome -->
+            <div class="typewriter m-5">
+                <h1 class="p-2">Happy Birthday, My Beautiful Universe 🎂🌛- Preethi </h1>
+            </div>
+
+            <!-- Countdown -->
+            <h5 id="countdown" class="mb-5 text-muted"></h5>
+
+            <!-- Parallax Background Section -->
+            <div class="parallax parallax1 mb-5">
+                <!-- Hand-Drawn Animated Heart -->
+                <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 36 34"
+                    preserveAspectRatio="xMidYMid meet" width="80%" height="80%" style="overflow: visible;">
+                    <path fill="none" stroke="#FF0000" stroke-width="2" d="M23.7,0C21,0,18.6,1.9,16,4.6C13.4,1.9,11,0,8.3,0C3.7,0,0,3.7,0,8.3
+             C0,12.3,2.5,16.1,6.5,19.4L16,29.6l9.5-10.2c4-3.3,6.5-7.1,6.5-11.1
+             C32,3.7,28.3,0,23.7,0z" />
+                </svg>
+            </div>
+
+            <!-- Main Content Section -->
+            <div class="content mb-5">
+                <h1>Welcome to my romantic world 💖</h1>
+                <p>
+                    Each morning I wake and smile anew,<br>
+                    Because each day I’m loved by you.
+                </p>
+            </div>
+
+            <!-- Second Parallax Background -->
+            <div class="parallax parallax2 mb-5"></div>
+
+            <!-- Another Content Section -->
+            <div class="content mb-5">
+                <h1>More love stories await...</h1>
+                <p>
+                    Not walls, not roofs, not bricks nor stone,<br>
+                    Your arms around me feel like home.
+                </p>
+            </div>
+
+            <div class="parallax parallax3 mb-5"></div>
+
+            <!-- Poem of the Day -->
+            <div class="poem-card p-4 mb-5" data-aos="fade-up">
+                <h4>Poem of the Day 💌</h4>
+                <p id="poemOfTheDay"></p>
+            </div>
+
+            <div class="container my-4">
+                <div id="interactive-cards" class="card-wrapper"></div>
+
+            </div>
+            <div class="modal fade" id="secretModal" tabindex="-1" aria-hidden="true">
+                <!-- ...modal content... -->
+            </div>
+
+
+
+            <!-- Carousel of Poems -->
+            <div id="poemCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner" id="carousel-poems"></div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#poemCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#poemCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap + AOS + Confetti Scripts -->
+    <script src="./bootstrap-5.3.5/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/aos.js"></script>
+    <script>AOS.init();</script>
+    <script src="./scripts/confetti.browser.min.js"></script>
+    <script src="./scripts/poem.js"></script>
+
+</body>
+
+</html>
